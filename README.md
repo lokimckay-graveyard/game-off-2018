@@ -2,7 +2,8 @@
 
 ## Releases
 
-Downloads for all target platforms can be downloaded in the [releases section](https://github.com/sneyed/game-off-2018/releases)
+- Downloads for all target platforms can be downloaded in the [releases section](https://github.com/sneyed/game-off-2018/releases)
+- HTML5 build is also deployed here: https://sneyed.github.io/game-off-2018/
 
 ## Links
 
