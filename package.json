@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "lint": "prettier --write ./**/**.md"
+  },
+  "devDependencies": {
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.3",
+    "prettier": "^1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "npm run lint",
+      "git add"
+    ]
+  }
+}
