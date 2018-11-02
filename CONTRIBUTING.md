@@ -4,8 +4,8 @@ When contributing to this repository, please first discuss the change you wish
 to make via issue, email, or any other method with the owners of this repository
 before making a change.
 
-Please note we have a [code of conduct](/CODE_OF_CONDUCT.md), please follow it in
-all your interactions with the project.
+Please note we have a [code of conduct](/CODE_OF_CONDUCT.md), please follow it
+in all your interactions with the project.
 
 ## Requirements
 
@@ -47,7 +47,10 @@ all your interactions with the project.
 
 ## Creating release builds
 
-- If you wish to create distributable release builds for all export targets, you need to [tag your commit](https://git-scm.com/book/en/v2/Git-Basics-Tagging). Travis-ci will handle the rest and build artifacts will be listed in the [releases](https://github.com/sneyed/game-off-2018/releases) section.
+- If you wish to create distributable release builds for all export targets, you
+  need to [tag your commit](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
+  Travis-ci will handle the rest and build artifacts will be listed in the
+  [releases](https://github.com/sneyed/game-off-2018/releases) section.
 
 ## Pull Request Process
 
