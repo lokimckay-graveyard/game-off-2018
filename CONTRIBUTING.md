@@ -40,6 +40,12 @@ in all your interactions with the project.
       Longer description block if needed...
   ```
 
+- Push your changes to your feature branch
+
+```
+    git push -u origin feature/my_feature_name
+```
+
 ## Creating release builds
 
 - If you wish to create distributable release builds for all export targets, you
