@@ -9,9 +9,8 @@ in all your interactions with the project.
 
 ## Requirements
 
-- [NPM](https://www.npmjs.com/get-npm) or
-  [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-- [Godot Engine](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+- [Git](https://git-scm.com/downloads)
+- [Godot Engine](https://godotengine.org/)
 
 ## Getting Started
 
@@ -28,19 +27,15 @@ in all your interactions with the project.
     directly on the `master` branch
 - Make your changes
 - Make commits of logical and atomic units (taking note of the below)
-- Run `npm install` or `yarn install` in the root directory to install all
-  dependencies
-  - When you make a commit, [Husky](https://github.com/typicode/husky) will use
-    [prettier](https://github.com/prettier/prettier) to lint the repository
 - Check for unnecessary whitespace with `git diff --check` before committing
 - Make sure your commit messages are in the proper format. If the commit
   addresses an issue filed on Github, start the first line of the commit with
-  the issue number in square brackets
+  `GH-` and then the issue number in square brackets (e.g. `[GH-1234]`)
 - Make sure your commit message subject line uses the
   [imperative mood](https://en.wikipedia.org/wiki/Imperative_mood)
 
   ```
-      [ISS-1234] Add new feature
+      [GH-1234] Add new feature
 
       Longer description block if needed...
   ```
