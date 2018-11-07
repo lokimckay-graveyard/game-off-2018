@@ -11,8 +11,14 @@ config_version=3
 [application]
 
 config/name="GHGO18"
-run/main_scene="res://Scene/hello_world.tscn"
+run/main_scene="res://menu/main_menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+scene_manager="*res://manager/scene_manager.gd"
+logger="*res://manager/logger.gd"
+game_manager="*res://manager/game_manager.gd"
 
 [rendering]
 
