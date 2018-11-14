@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -54,5 +55,9 @@ material/0 = null
 [node name="Controller" parent="." index="3" instance=ExtResource( 2 )]
 
 speed = 400
+
+[node name="Tentacle" parent="." index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.2, 0, 0 )
 
 
