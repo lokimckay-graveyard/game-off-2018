@@ -2,14 +2,14 @@
 
 [ext_resource path="res://gui/debug_overlay.gd" type="Script" id=1]
 
-[node name="DebugOverlay" type="Panel"]
+[node name="DebugOverlay" type="Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 143.0
-margin_bottom = 112.0
+margin_bottom = 137.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -46,7 +46,7 @@ anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 133.0
-margin_bottom = 102.0
+margin_bottom = 127.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -123,13 +123,12 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Movement"
 flat = false
 align = 1
 items = [  ]
 selected = -1
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" index="3"]
+[node name="Gameover" type="Button" parent="MarginContainer/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -138,6 +137,30 @@ anchor_bottom = 0.0
 margin_top = 72.0
 margin_right = 123.0
 margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Gameover"
+flat = false
+align = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 123.0
+margin_bottom = 116.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -158,6 +181,8 @@ align = 1
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
 
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Movement" to="." method="_on_Movement_item_selected"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Gameover" to="." method="_on_Gameover_pressed"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 

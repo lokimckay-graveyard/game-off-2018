@@ -19,6 +19,9 @@ func _on_Restart_pressed():
 func _on_Menu_pressed():
 	game_manager.quitToMenu()
 
+func _on_Gameover_pressed():
+	game_manager.gameover()
+
 func _on_Quit_pressed():
 	game_manager.quit()
     
@@ -38,7 +41,4 @@ func _change_controller_type(path):
         
     var new_controller = ResourceLoader.load(path).instance()
     player.add_child(new_controller)
-    
-    
-        
-    
+
