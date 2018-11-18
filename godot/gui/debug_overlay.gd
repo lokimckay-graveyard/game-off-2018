@@ -21,6 +21,15 @@ func _on_Menu_pressed():
 
 func _on_Gameover_pressed():
 	game_manager.gameover()
+    
+func _on_Damage_pressed():
+    var health = scene_manager.current_scene.get_node('Player/Health')
+    health.decrease(1)
+
+
+func _on_Heal_pressed():
+    var health = scene_manager.current_scene.get_node('Player/Health')
+    health.increase(1)
 
 func _on_Quit_pressed():
 	game_manager.quit()
@@ -41,4 +50,3 @@ func _change_controller_type(path):
         
     var new_controller = ResourceLoader.load(path).instance()
     player.add_child(new_controller)
-

@@ -3,6 +3,7 @@
 [ext_resource path="res://player/camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/health.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -220,4 +221,5 @@ _sections_unfolded = [ "Transform" ]
 speed = 400
 current_weapon = null
 
+[node name="Health" parent="." index="7" instance=ExtResource( 4 )]
 
