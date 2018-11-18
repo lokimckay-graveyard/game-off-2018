@@ -9,7 +9,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 143.0
-margin_bottom = 137.0
+margin_bottom = 180.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -17,7 +17,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Margin", "Size Flags" ]
+_sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="0"]
 
@@ -25,6 +25,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -46,7 +47,7 @@ anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 133.0
-margin_bottom = 127.0
+margin_bottom = 175.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -152,7 +153,7 @@ text = "Gameover"
 flat = false
 align = 1
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" index="4"]
+[node name="Damage" type="Button" parent="MarginContainer/VBoxContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -161,6 +162,54 @@ anchor_bottom = 0.0
 margin_top = 96.0
 margin_right = 123.0
 margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Deal damage"
+flat = false
+align = 1
+
+[node name="Heal" type="Button" parent="MarginContainer/VBoxContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 120.0
+margin_right = 123.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Heal yourself"
+flat = false
+align = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 144.0
+margin_right = 123.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -183,6 +232,10 @@ align = 1
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Movement" to="." method="_on_Movement_item_selected"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Gameover" to="." method="_on_Gameover_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Damage" to="." method="_on_Damage_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Heal" to="." method="_on_Heal_pressed"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 

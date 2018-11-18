@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/camera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/health.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -60,7 +61,11 @@ cast_to = Vector3( 0, 0, -2 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hand" type="Position3D" parent="." index="4"]
+[node name="Tentacle" parent="." index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.2, 0, 0 )
+
+[node name="Hand" type="Position3D" parent="." index="5"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
 _sections_unfolded = [ "Transform" ]
@@ -73,13 +78,11 @@ cast_to = Vector3( 0, 0, -2 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Controller" parent="." index="5" instance=ExtResource( 2 )]
+[node name="Controller" parent="." index="6" instance=ExtResource( 3 )]
 
 speed = 400
 current_weapon = null
 
-[node name="Tentacle" parent="." index="4" instance=ExtResource( 3 )]
-
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.2, 0, 0 )
+[node name="Health" parent="." index="7" instance=ExtResource( 4 )]
 
 
