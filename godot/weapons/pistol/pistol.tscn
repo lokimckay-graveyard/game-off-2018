@@ -3,51 +3,57 @@
 [ext_resource path="res://weapons/pistol/pistol.gd" type="Script" id=1]
 [ext_resource path="res://weapons/bullet_template.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="BoxShape" id=3]
 
-radius = 0.5
-height = 0.5
+extents = Vector3( 1, 0.406191, 0.662423 )
 
-[sub_resource type="CapsuleMesh" id=2]
+[sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-radius = 1.0
-mid_height = 1.0
-radial_segments = 64
-rings = 8
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
 
-[node name="Pistol" type="Area" index="0"]
+[node name="Pistol" type="RigidBody" index="0"]
 
-input_ray_pickable = false
+input_ray_pickable = true
 input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
 collision_layer = 1
 collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
+mode = 0
+mass = 0.5
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-shape = SubResource( 1 )
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1 )
+shape = SubResource( 3 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+[node name="Handle" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.338224, 0.0614085, 0, -0.157716, 0.131691, 0, 0, 0.5 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -60,27 +66,45 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="Muzzle" type="Position3D" parent="." index="2"]
-
 _sections_unfolded = [ "Transform" ]
 
-[node name="ReloadTimer" type="Timer" parent="." index="3"]
+[node name="Barrel" type="MeshInstance" parent="." index="2"]
+
+transform = Transform( 0.1, 0, 0, 0, -2.40413e-008, -0.2, 0, 0.55, -8.74228e-009, 0, 0.2, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="Muzzle" type="Position3D" parent="." index="3"]
+
+transform = Transform( -1, 8.74228e-008, 0, 8.74228e-008, 1, 8.74228e-008, 7.64274e-015, 8.74228e-008, -1, 0, 0.284502, -0.567979 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ReloadTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = true
 autostart = false
 
-[node name="FireTimer" type="Timer" parent="." index="4"]
+[node name="FireTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 0.2
 one_shot = true
 autostart = false
 
-[node name="Controller" type="Node" parent="." index="5"]
+[node name="Controller" type="Node" parent="." index="6"]
 
 script = ExtResource( 1 )
 damage = 1
