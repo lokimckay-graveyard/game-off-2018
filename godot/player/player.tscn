@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gui/health.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/mouse_controller.gd" type="Script" id=4]
+[ext_resource path="res://gui/health.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -130,7 +131,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -218,8 +219,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Controller" parent="." index="6" instance=ExtResource( 3 )]
 
-speed = 400
+script = ExtResource( 4 )
 current_weapon = null
 
-[node name="Health" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Health" parent="." index="7" instance=ExtResource( 5 )]
+
 
