@@ -174,7 +174,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="EyesMesh" type="MeshInstance" parent="PlayerMeshGroup" index="1"]
 
-transform = Transform( 0.779165, 0, 0, 0, 0.252777, 0, 0, 0, 0.277264, 0, 2.01867, 0.683393 )
+transform = Transform( 0.779165, 0, 0, 0, 0.252777, 0, 0, 0, 0.277264, 0, 2.01867, -0.683393 )
 layers = 1
 material_override = null
 cast_shadow = 1
