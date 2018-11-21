@@ -100,14 +100,16 @@ func accelerate_speed(delta):
     if accelerating and current_speed < max_speed:
         new_speed += acceleration * delta
         
-        if current_speed > max_speed:
+        if new_speed > max_speed:
             new_speed = max_speed
             
-    if !accelerating and current_speed > 0:
+    if !accelerating and current_speed > 0.0:
         new_speed -= deceleration * delta
         
-        if current_speed < 0:
-            new_speed = 0
+        if new_speed < 0.0:
+            new_speed = 0.0
+            
+    print(new_speed)
             
     return new_speed
 
