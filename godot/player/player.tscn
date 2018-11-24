@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/tentacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/wsad_controller.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gui/health.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/mouse_controller.gd" type="Script" id=4]
+[ext_resource path="res://gui/health.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -130,7 +131,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -154,6 +155,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerMeshGroup" type="Spatial" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="BodyMesh" type="MeshInstance" parent="PlayerMeshGroup" index="0"]
 
 transform = Transform( 0.9, 0, 0, 0, -3.93403e-008, -1, 0, 0.9, -4.37114e-008, 0, 1.5, 0 )
@@ -173,7 +176,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="EyesMesh" type="MeshInstance" parent="PlayerMeshGroup" index="1"]
 
-transform = Transform( 0.779165, 0, 0, 0, 0.252777, 0, 0, 0, 0.277264, 0, 2.01867, 0.683393 )
+transform = Transform( 0.779165, 0, 0, 0, 0.252777, 0, 0, 0, 0.277264, 0, 2.01867, -0.683393 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -218,8 +221,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Controller" parent="." index="6" instance=ExtResource( 3 )]
 
-speed = 400
+script = ExtResource( 4 )
+max_speed = 12.0
+acceleration = 20
+deceleration = 40
+follow_direction_speed = 0.1
 current_weapon = null
 
-[node name="Health" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Health" parent="." index="7" instance=ExtResource( 5 )]
+
 

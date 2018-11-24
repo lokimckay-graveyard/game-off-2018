@@ -3,8 +3,8 @@ extends Panel
 var controller_dropdown
 
 const controller_types = {
-	"0": 'res://player/wsad_controller.tscn',
-	"1": 'res://player/mouse_controller.tscn',
+	"0": 'res://player/mouse_controller.tscn',
+	"1": 'res://player/wsad_controller.tscn',
 	"2": 'res://player/keyboard_controller.tscn'
 }
 
@@ -38,8 +38,8 @@ func _on_Movement_item_selected(ID):
     call_deferred('_change_controller_type', controller_types[String(ID)])
     
 func _setup_controller_dropdown():
-    controller_dropdown.add_item('WSAD')
     controller_dropdown.add_item('Mouse Rot.')
+    controller_dropdown.add_item('WSAD')
     controller_dropdown.add_item('Keys Rot.')
     
 func _change_controller_type(path):
